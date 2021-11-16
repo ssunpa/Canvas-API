@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Drawing Shapes</title>
+    </head>
+    <body onload="draw();">
+        <canvas id="canvas"></canvas>
+    </body>
+
+    <script>
+        function draw() {
+            const canvas = document.querySelector('#canvas');
+            if (canvas.getContext) {
+                const ctx = canvas.getContext('2d');
+
+                ctx.beginPath();
+                ctx.moveTo(70, 30);
+                ctx.lineTo(30, 100);
+                ctx.lineTo(110, 100);
+                ctx.fill();
+            }
+        }
+    </script>
+</html>

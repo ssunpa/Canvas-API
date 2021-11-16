@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Drawing Shapes</title>
+    </head>
+    <body onload="draw();">
+        <canvas id="canvas"></canvas>
+    </body>
+
+    <script>
+        function draw() {
+            const canvas = document.getElementById('canvas');
+            if (canvas.getContext) {
+                const ctx = canvas.getContext('2d');
+
+                ctx.beginPath();
+                ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // 얼굴
+                ctx.moveTo(110, 75);
+                ctx.arc(75, 75, 35, 0, Math.PI, false); // 입
+                ctx.moveTo(65, 65);
+                ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // 왼쪽 눈
+                ctx.moveTo(95, 65);
+                ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // 오른쪽 눈
+                ctx.stroke();
+            }
+        }
+    </script>
+</html>
